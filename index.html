@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="stylesheet.css">
+	<title>Jungle</title>
+</head>
+<body>
+	<header id="header">
+		<a href="" class="logo">Jungle</a>
+		<ul>
+			<li><a href="" class="active">Home</a></li>
+			<li><a href="">About</a></li>
+			<li><a href="">Destination</a></li>
+			<li><a href="">Contact</a></li>
+		</ul>
+	</header>
+	<section>
+		<h2 id="text">
+			<span>It's time for a new</span>
+			<br>Adventure
+		</h2>
+		<img src="media/bird1.png" id="bird1" alt="bird">
+		<img src="media/bird2.png" id="bird2" alt="bird">
+		<img src="media/forest.png" id="forest" alt="forest">
+		<a href="#" id="btn">Explore</a>
+		<img src="media/rocks.png" id="rocks" alt="rocks">
+		<img src="media/water.png" id="water" alt="water">
+
+	</section>
+	<div class="sec">
+		<h2>Parallax Scrolling Effect</h2>
+		<p>
+			Parallax scrolling is a web design technique in which the website background moves at a slower pace than the foreground. This results in a 3D effect as visitors scroll down the site, adding a sense of depth and creating a more immersive browsing experience.
+			<br>
+			Parallax is based on optical illusion. Since the human eye perceives objects that are close to us as larger than things farther away, we perceive distant objects as if they were moving more slowly.
+			<br>
+			The illusion has been long adopted into parallax across different mediums, fostering a realistic effect. Its first use was in traditional animation, dating back to as early as Disney’s Snow White and the Seven Dwarfs, and in video games such as Super Mario. 
+			<br>
+			One of the first implementations of parallax scrolling in the browser was created and shared in a blog post by web developer Glutnix in 2007, this included example code and a demo using JavaScript and CSS 2 that supported Internet Explorer 6 and other browsers of that era. However, it wasn't until 2011 and the introduction of HTML5 and CSS 3 coding that the technique became popular with Web designers. Advocates argue it is a simple way to embrace the fluidity of the Web. Proponents use parallax backgrounds as a tool to better engage users and improve the overall experience that a website provides. However, a Purdue University study, published in 2013, revealed the following findings: "... although parallax scrolling enhanced certain aspects of the user experience, it did not necessarily improve the overall user experience"
+		</p>
+	</div>
+	<script>
+		let text = document.getElementById("text");
+		let bird1 = document.getElementById("bird1");
+		let bird2 = document.getElementById("bird2");
+		let btn = document.getElementById("btn");
+		let forest = document.getElementById("forest");
+		let rocks = document.getElementById("rocks");
+		let water = document.getElementById("water");		
+		let header = document.getElementById("header");		
+
+		window.addEventListener("scroll", function(){
+			let value = window.scrollY;
+			text.style.top = 50 + value * -0.5 + '%';
+			bird1.style.top = value * -1.5 + 'px';
+			bird1.style.left = value * 2 + 'px';
+			bird2.style.top = value * -1.5 + 'px';
+			bird2.style.left = value * -5 + 'px';
+			btn.style.marginTop = value * 1.5 + 'px';
+			rocks.style.top =  value * -0.12 + 'px';
+			forest.style.top =  value * 0.25 + 'px';
+			header.style.top =  value * 0.5 + 'px';
+		})
+	</script>
+</body>
+</html>
